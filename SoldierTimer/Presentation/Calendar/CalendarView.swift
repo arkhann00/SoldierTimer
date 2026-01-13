@@ -1,11 +1,20 @@
+//
+//  CalendarView.swift
+//  SoldierTimer
+//
+//  Created by Арсен Хачатрян on 24.12.2025.
+//
+
+
 import SwiftUI
+import Combine
 
 struct CalendarView: View {
     @ObservedObject var vm: CalendarViewModel
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 16) {
+            VStack(spacing: 6) {
                 Group {
                     Text("Дата дембеля")
                         .font(.headline)
@@ -19,7 +28,6 @@ struct CalendarView: View {
                 }
 
                 Divider()
-
                 switch vm.state {
                 case .loading:
                     ProgressView()
@@ -36,6 +44,7 @@ struct CalendarView: View {
                 case .error(let msg):
                     Text(msg)
                 }
+                
             }
             .padding()
             .navigationTitle("Calendar")

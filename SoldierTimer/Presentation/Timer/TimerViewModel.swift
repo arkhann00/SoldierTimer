@@ -1,4 +1,13 @@
+//
+//  TimerViewModel.swift
+//  SoldierTimer
+//
+//  Created by Арсен Хачатрян on 24.12.2025.
+//
+
+
 import Foundation
+import Combine
 
 @MainActor
 final class TimerViewModel: ObservableObject {
